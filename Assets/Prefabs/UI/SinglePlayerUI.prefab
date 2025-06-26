@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4457920542688625469}
+  - component: {fileID: 2930464935553808780}
   - component: {fileID: 4871649522748748583}
-  - component: {fileID: 6455567370074566389}
   - component: {fileID: 522882438805434905}
   m_Layer: 5
   m_Name: SinglePlayerUI
@@ -43,6 +43,20 @@ RectTransform:
   m_AnchoredPosition: {x: 520.77, y: -40}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2930464935553808780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468753938957670944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 2
+  m_VerticalFit: 2
 --- !u!114 &4871649522748748583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,20 +83,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &6455567370074566389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468753938957670944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &522882438805434905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,10 +96,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNameText: {fileID: 6462545023249188480}
-  role0Button: {fileID: 6336987675449585282}
-  role1Button: {fileID: 595472351764044176}
-  role2Button: {fileID: 6970747714748031669}
-  role3Button: {fileID: 3867232956535156760}
+  helmsmanRoleButton: {fileID: 6336987675449585282}
+  sailTrimmerRoleButton: {fileID: 595472351764044176}
+  lookoutRoleButton: {fileID: 6970747714748031669}
+  navigatorRoleButton: {fileID: 3867232956535156760}
 --- !u!1 &606035869470014050
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 2837477562598130311}
   - component: {fileID: 3867232956535156760}
   m_Layer: 5
-  m_Name: role3Button
+  m_Name: navigatorRoleButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,7 +642,7 @@ GameObject:
   - component: {fileID: 1821632130261673769}
   - component: {fileID: 6970747714748031669}
   m_Layer: 5
-  m_Name: role2Button
+  m_Name: lookoutRoleButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -899,7 +899,7 @@ GameObject:
   - component: {fileID: 5414396012755987751}
   - component: {fileID: 595472351764044176}
   m_Layer: 5
-  m_Name: role1Button
+  m_Name: sailTrimmerRoleButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1171,7 +1171,7 @@ GameObject:
   - component: {fileID: 1490189689972615991}
   - component: {fileID: 6336987675449585282}
   m_Layer: 5
-  m_Name: role0Button
+  m_Name: helmsmanRoleButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
