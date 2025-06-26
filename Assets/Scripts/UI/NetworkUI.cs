@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
@@ -19,6 +20,20 @@ public class NetworkUI : BaseUI
         ipInput.onValueChanged.AddListener(ChangeIP);
         hostGameButton.interactable = false;
         joinGameButton.interactable = false;
+    }
+
+    private void Start()
+    {
+        NetworkManager.Singleton.OnClientConnectedCallback += NetworkManager_OnClientConnectedCallback;
+    }
+
+    private void NetworkManager_OnClientConnectedCallback(ulong clientId)
+    {
+        if (NetworkManager.Singleton.LocalClientId == clientId)
+        {
+            PlayerData playerData = new PlayerData(clientId, playerNameInput.text);
+            PlayerManager.Instance.AddPlayerServerRpc(playerData);
+        }
     }
 
     private void StartHost()
