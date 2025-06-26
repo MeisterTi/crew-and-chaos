@@ -1,0 +1,68 @@
+using System;
+using Unity.Netcode;
+
+public class PlayerManager : NetworkSingleton<PlayerManager>
+{
+    public NetworkList<PlayerData> PlayerList = new NetworkList<PlayerData>();
+    public Action OnPlayerListChanged;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        PlayerList = new NetworkList<PlayerData>();
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+        PlayerList.OnListChanged += PlayerList_OnListChanged;
+    }
+
+    private void PlayerList_OnListChanged(NetworkListEvent<PlayerData> changeEvent)
+    {
+        OnPlayerListChanged?.Invoke();
+    }
+
+    public PlayerData GetPlayerDataByClientId(ulong clientId)
+    {
+        foreach (PlayerData p in PlayerList)
+        {
+            if (p.ClientId == clientId)
+            {
+                return p;
+            }
+        }
+        return new PlayerData();
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void AddPlayerServerRpc(PlayerData playerData)
+    {
+        PlayerList.Add(playerData);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void SetPlayerSailingRoleServerRpc(SailingRole sailingRole, ServerRpcParams serverRpcParams = default)
+    {
+        UpdatePlayerSailingRole(serverRpcParams.Receive.SenderClientId, sailingRole);
+    }
+
+    private void UpdatePlayerSailingRole(ulong senderClientId, SailingRole sailingRole)
+    {
+        for (int i = 0; i < PlayerList.Count; i++)
+        {
+            if (PlayerList[i].ClientId == senderClientId)
+            {
+                PlayerData updatePlayerData = PlayerList[i];
+                updatePlayerData.SailingRole = sailingRole;
+                PlayerList[i] = updatePlayerData;
+                break;
+            }
+        }
+    }
+}
