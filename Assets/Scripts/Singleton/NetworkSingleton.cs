@@ -15,9 +15,4 @@ public class NetworkSingleton<T> : NetworkBehaviour where T : NetworkBehaviour
             Destroy(gameObject);
         }
     }
-
-    public override void OnNetworkSpawn()
-    {
-        base.OnNetworkSpawn();
-    }
 }
