@@ -11,8 +11,8 @@ This document explains how you can help out and what to expect when collaboratin
 
 1. **Fork the repository** and clone it to your machine.
 2. **Read the Game Design Document** in the [`/docs`](./docs) folder.
-3. Check out the [open issues](https://github.com/YOUR_REPO_LINK/issues)  pick one or suggest your own.
-4. Create a branch from `main` for your changes:
+3. Check out the [open issues](https://github.com/MeisterTi/crew-and-chaos/issues) pick one or suggest your own.
+4. Create a branch from `master` for your changes:
    ```bash
    git checkout -b feature/your-feature-name
    ```
@@ -29,7 +29,7 @@ This document explains how you can help out and what to expect when collaboratin
 - Artists (2D/3D assets for boat, sails, environment)
 - Playtesters and chaos fans
 
-Even if you're new to Unity or game dev 鈥� you're welcome here.
+Even if you're new to Unity or game dev you're welcome here.
 
 ---
 
@@ -56,13 +56,13 @@ Even if you're new to Unity or game dev 鈥� you're welcome here.
 
 - Use GitHub Discussions or Issues for questions or ideas
 - Respect each other鈥檚 time and experience levels
-- Speak clearly 鈥� especially when we鈥檙e yelling "TRIM THE SAIL!" 馃槃
+- Speak clearly especially when we're yelling "TRIM THE SAIL!" 
 
 ---
 
 ## Local Setup
 
-You鈥檒l need:
+You'll need:
 
 - Unity 6(LTS preferred)
 - Android or iOS build support
