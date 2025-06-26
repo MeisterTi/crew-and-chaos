@@ -1,4 +1,4 @@
-# 馃殺 Crew & Chaos (Working Title)
+# Crew & Chaos (Working Title)
 
 **Crew & Chaos** is a cooperative, physics-based sailing game for mobile devices (Android/iOS), designed to be played in local multiplayer with 2鈥�4 players. Players take on different roles aboard a sailboat, each with unique tasks that require communication, coordination, and timing 鈥� all in real time.
 
@@ -6,7 +6,7 @@
 
 ---
 
-## 馃幆 Game Concept
+##  Game Concept
 
 - Local coop game where each player controls a specific role (Helmsman, Sail Trimmer, Lookout, Navigator).
 - Every player sees the full boat from a third-person perspective.
@@ -16,7 +16,7 @@
 
 ---
 
-## 馃敡 Tech Stack
+##  Tech Stack
 
 - **Engine**: Unity
 - **Networking**: Unity Netcode for GameObjects (NGO)
@@ -26,7 +26,7 @@
 
 ---
 
-## 馃幃 Gameplay Roles
+##  Gameplay Roles
 
 | Role        | Responsibilities                                      |
 |-------------|-------------------------------------------------------|
@@ -35,13 +35,13 @@
 | Lookout     | Warn of obstacles, only they see water hazards       |
 | Navigator   | Monitor wind direction and optimal routes            |
 
-鉁� Ropes must be dragged and knotted  
-鉁� Players must duck when the boom swings  
-鉁� Communication is 100% voice 鈥� no buttons, no chat
+ Ropes must be dragged and knotted  
+ Players must duck when the boom swings  
+ Communication is 100% voice no buttons, no chat
 
 ---
 
-## 馃Л How It Works
+##  How It Works
 
 - Players select their role in a **lobby scene** (1 role per player).
 - Each role has a different control overlay and tasks.
@@ -50,14 +50,14 @@
 
 ---
 
-## 馃搧 Documents
+##  Documents
 
-- 馃搫 [Game Design Document (English)](./docs/crew_and_chaos_gdd_en.docx)
-- 馃搫 [Game Design Document (German)](./docs/crew_and_chaos_gdd_de.docx)
+-  [Game Design Document (English)](./docs/crew_and_chaos_gdd_en.docx)
+-  [Game Design Document (German)](./docs/crew_and_chaos_gdd_de.docx)
 
 ---
 
-## 馃鈥嶐煉� Want to Contribute?
+## Want to Contribute?
 
 We're looking for people excited by:
 - Unity gameplay programming (physics, UI, input)
@@ -65,14 +65,14 @@ We're looking for people excited by:
 - Game designers with UX or sailing experience
 - Artists (2D/3D) for UI mockups and boat parts
 
-馃搶 **Get started:**
+ **Get started:**
 1. Clone the repo
 2. Check open issues
 3. Introduce yourself via Discussion or PR
 
 ---
 
-## 馃 Contribution Guidelines
+##  Contribution Guidelines
 
 - Be respectful and collaborative
 - Open an issue before submitting major changes
@@ -81,11 +81,11 @@ We're looking for people excited by:
 
 ---
 
-## 馃摐 License
+##  License
 
 This project will be open-sourced under the **MIT License**.  
 Feel free to fork, learn, or contribute 鈥� just credit the team.
 
 ---
 
-> Made by sailing nerds, for co-op chaos lovers 馃寠鉀�
+> Made by sailing nerds, for co-op chaos lovers
