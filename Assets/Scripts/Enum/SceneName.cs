@@ -1,7 +1,7 @@
 public enum SceneName
 {
     MainMenu,
-    Networking,
+    Network,
     Lobby,
     Game
 }

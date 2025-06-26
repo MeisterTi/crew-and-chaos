@@ -12,6 +12,6 @@ public class MainMenuUI : BaseUI
 
     private void StartGameButtonClickHandler()
     {
-        SceneLoader.LoadScene(SceneName.Networking);
+        SceneLoader.LoadScene(SceneName.Network);
     }
 }
