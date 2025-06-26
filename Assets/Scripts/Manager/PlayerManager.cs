@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unity.Netcode;
 
 public class PlayerManager : NetworkSingleton<PlayerManager>
@@ -63,6 +64,33 @@ public class PlayerManager : NetworkSingleton<PlayerManager>
                 PlayerList[i] = updatePlayerData;
                 break;
             }
+        }
+        CheckRoleAssignmentCompleted();
+    }
+
+    private void CheckRoleAssignmentCompleted()
+    {
+        HashSet<SailingRole> requiredRoles = new HashSet<SailingRole>
+        {
+        SailingRole.HELMSMAN,
+        SailingRole.SAIL_TRIMMER,
+        SailingRole.LOOKOUT,
+        SailingRole.NAVIGATOR
+        };
+
+        HashSet<SailingRole> assignedRoles = new HashSet<SailingRole>();
+
+        foreach (PlayerData playerData in PlayerList)
+        {
+            if (requiredRoles.Contains(playerData.SailingRole))
+            {
+                assignedRoles.Add(playerData.SailingRole);
+            }
+        }
+
+        if (assignedRoles.SetEquals(requiredRoles))
+        {
+            GameManager.Instance.AllPlayersReady();
         }
     }
 }
