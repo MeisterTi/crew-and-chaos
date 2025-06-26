@@ -1,30 +1,49 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LobbyUI : BaseUI
 {
     [SerializeField] private TextMeshProUGUI hostIPAddressText;
     [SerializeField] private Transform playerUIContainer;
     [SerializeField] private Transform singlePlayerUIPrefab;
+    [SerializeField] private Button startSailingAdventureButton;
 
     private void Awake()
     {
         if (NetworkManager.Singleton.IsServer)
         {
             hostIPAddressText.text = Networking.GetLocalIP();
+            startSailingAdventureButton.gameObject.SetActive(true);
+            startSailingAdventureButton.onClick.AddListener(() => GameManager.Instance.StartAdventure());
+            startSailingAdventureButton.interactable = false;
         }
         else
         {
             hostIPAddressText.text = SceneName.Lobby.ToString();
+            startSailingAdventureButton.gameObject.SetActive(false);
         }
     }
 
     private void Start()
     {
         PlayerManager.Instance.OnPlayerListChanged += PlayerManager_OnPlayerListChanged;
+        if (NetworkManager.Singleton.IsServer)
+        {
+            GameManager.Instance.CurrentGamestate.OnValueChanged += GameManager_OnValueChanged;
+        }
         UpdatePlayerListUI();
+    }
+
+    private void GameManager_OnValueChanged(GameState previousValue, GameState newValue)
+    {
+        if (newValue == GameState.ALL_READY)
+        {
+            startSailingAdventureButton.interactable = true;
+        }
     }
 
     private void PlayerManager_OnPlayerListChanged()
