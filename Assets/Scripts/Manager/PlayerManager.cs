@@ -29,6 +29,11 @@ public class PlayerManager : NetworkSingleton<PlayerManager>
         OnPlayerListChanged?.Invoke();
     }
 
+    /// <summary>
+    /// Gets the player data by client ID
+    /// </summary>
+    /// <param name="clientId">The client ID</param>
+    /// <returns>PlayerData that contains the clientID param</returns>
     public PlayerData GetPlayerDataByClientId(ulong clientId)
     {
         foreach (PlayerData p in PlayerList)
@@ -41,12 +46,21 @@ public class PlayerManager : NetworkSingleton<PlayerManager>
         return new PlayerData();
     }
 
+    /// <summary>
+    /// Server RPC to add the PlayerData to the list
+    /// </summary>
+    /// <param name="playerData">PlayerData struct: clientID, playerName and Role (sett initially to NONE)</param>
     [ServerRpc(RequireOwnership = false)]
     public void AddPlayerServerRpc(PlayerData playerData)
     {
         PlayerList.Add(playerData);
     }
 
+    /// <summary>
+    /// Server RPC updates the role of the player by sender client id
+    /// </summary>
+    /// <param name="sailingRole">The new role the player wants</param>
+    /// <param name="serverRpcParams">contains the client id of the sender</param>
     [ServerRpc(RequireOwnership = false)]
     public void SetPlayerSailingRoleServerRpc(SailingRole sailingRole, ServerRpcParams serverRpcParams = default)
     {

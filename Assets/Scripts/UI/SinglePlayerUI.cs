@@ -23,11 +23,19 @@ public class SinglePlayerUI : BaseUI
         navigatorRoleButton.onClick.AddListener(() => SetPlayerSailingRole(SailingRole.NAVIGATOR));
     }
 
+    /// <summary>
+    /// Setter for the player name
+    /// </summary>
+    /// <param name="playerName"></param>
     public void SetPlayerName(string playerName)
     {
         playerNameText.text = playerName;
     }
 
+    /// <summary>
+    /// Sets the interacability for the roles not assigned
+    /// </summary>
+    /// <param name="takenRoles">Contains an hashset of roles, that are already assigned</param>
     public void SetAvailableRoles(HashSet<SailingRole> takenRoles)
     {
         helmsmanRoleButton.interactable = !takenRoles.Contains(SailingRole.HELMSMAN);

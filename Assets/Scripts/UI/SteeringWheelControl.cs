@@ -3,21 +3,21 @@ using UnityEngine.EventSystems;
 
 public class SteeringWheelControl : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-    public float maxWheelAngle = 720f; // e.g., 2 full rotations
-    public float maxRudderAngle = 30f; // degrees left/right
-    public float returnSpeed = 180f;   // wheel reset speed (deg/sec)
+    [SerializeField] private float maxWheelAngle = 720f;
+    [SerializeField] private float maxRudderAngle = 30f;
+    [SerializeField] private float returnSpeed = 180f;
 
     private RectTransform wheelRect;
     private float currentWheelAngle = 0f;
     private float lastDragAngle;
     private bool isDragging = false;
 
-    void Start()
+    private void Start()
     {
         wheelRect = GetComponent<RectTransform>();
     }
 
-    void Update()
+    private void Update()
     {
         if (!isDragging)
         {
@@ -60,7 +60,10 @@ public class SteeringWheelControl : MonoBehaviour, IDragHandler, IBeginDragHandl
         isDragging = false;
     }
 
-    // Get rudder value in degrees (for boat script)
+    /// <summary>
+    /// Get rudder value in degrees (for boat script)
+    /// </summary>
+    /// <returns></returns>
     public float GetRudderAngle()
     {
         return Mathf.Clamp(currentWheelAngle / maxWheelAngle * maxRudderAngle, -maxRudderAngle, maxRudderAngle);

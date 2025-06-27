@@ -16,11 +16,18 @@ public class GameManager : NetworkSingleton<GameManager>
         base.OnNetworkSpawn();
     }
 
+    /// <summary>
+    /// Set all players ready, changing this value triggers an event
+    /// </summary>
     public void AllPlayersReady()
     {
         CurrentGamestate.Value = GameState.ALL_READY;
     }
 
+
+    /// <summary>
+    /// Start the Game, Loads the new game scene and triggers an event
+    /// </summary>
     public void StartAdventure()
     {
         SceneLoader.LoadNetworkScene(SceneName.Game);
