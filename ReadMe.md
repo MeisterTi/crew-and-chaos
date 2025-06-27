@@ -1,8 +1,8 @@
 # Crew & Chaos (Working Title)
 
-**Crew & Chaos** is a cooperative, physics-based sailing game for mobile devices (Android/iOS), designed to be played in local multiplayer with 2鈥�4 players. Players take on different roles aboard a sailboat, each with unique tasks that require communication, coordination, and timing 鈥� all in real time.
+**Crew & Chaos** is a cooperative, physics-based sailing game for mobile devices (Android/iOS), designed to be played in local multiplayer with 2-4 players. Players take on different roles aboard a sailboat, each with unique tasks that require communication, coordination, and timing all in real time.
 
-> **Voice only 鈥� no in-game chat. Just teamwork. Just chaos.**
+> **Voice only, no in-game chat. Just teamwork. Just chaos.**
 
 ---
 
@@ -10,7 +10,7 @@
 
 - Local coop game where each player controls a specific role (Helmsman, Sail Trimmer, Lookout, Navigator).
 - Every player sees the full boat from a third-person perspective.
-- Players interact with physical controls 鈥� sliders, wheels, ropes 鈥� that respond to real-time boat physics.
+- Players interact with physical controls sliders, wheels, ropes that respond to real-time boat physics.
 - Voice communication only (just like in the real world).
 - Designed for fun chaos, coordination, and shouting across the couch.
 
