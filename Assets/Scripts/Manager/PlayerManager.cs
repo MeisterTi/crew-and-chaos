@@ -70,7 +70,7 @@ public class PlayerManager : NetworkSingleton<PlayerManager>
 
     private void CheckRoleAssignmentCompleted()
     {
-        HashSet<SailingRole> requiredRoles = new HashSet<SailingRole>
+        /*HashSet<SailingRole> requiredRoles = new HashSet<SailingRole>
         {
         SailingRole.HELMSMAN,
         SailingRole.SAIL_TRIMMER,
@@ -86,11 +86,11 @@ public class PlayerManager : NetworkSingleton<PlayerManager>
             {
                 assignedRoles.Add(playerData.SailingRole);
             }
-        }
+        }*/
 
-        if (assignedRoles.SetEquals(requiredRoles))
-        {
-            GameManager.Instance.AllPlayersReady();
-        }
+        //if (assignedRoles.SetEquals(requiredRoles))
+        //{
+        GameManager.Instance.AllPlayersReady();
+        //}
     }
 }
